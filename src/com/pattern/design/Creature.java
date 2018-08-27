@@ -1,6 +1,6 @@
 package com.pattern.design;
 
-abstract public class Creature {
+public abstract class Creature {
 
     protected String name;
     protected int weight;
