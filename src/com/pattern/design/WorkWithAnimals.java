@@ -2,6 +2,8 @@ package com.pattern.design;
 
 public class WorkWithAnimals {
 
+    static int justANum = 10;
+
     public static void main (String[] args ) {
 
         Dog fido = new Dog();
@@ -22,9 +24,35 @@ public class WorkWithAnimals {
         changeObjectName(fido);
 
         System.out.println("Dog name after method call : " + fido.getName());
+
+        Animal doggy = new Dog();
+        Animal kitty = new Cat();
+
+        System.out.println("Doggy says: " + doggy.getSound());
+        System.out.println("Kitty says: " + kitty.getSound());
+
+        Animal[] animals = new Animal[4];
+        animals[0] = doggy;
+        animals[1] = kitty;
+
+        System.out.println("Doggy says: " + animals[0].getSound());
+        System.out.println("Kitty says: " + animals[1].getSound());
+
+        speakAnimal(doggy);
+        speakAnimal(kitty);
+
+        ((Dog)doggy).digHole(); // Casting
+
+        System.out.println(justANum);
+
+        fido.accessPrivate();
     }
 
     public static void changeObjectName(Dog fido) {
         fido.setName("Marcus");
+    }
+
+    public static void speakAnimal(Animal randAnimal) {
+        System.out.println("Animal says: " + randAnimal.getSound());
     }
 }
